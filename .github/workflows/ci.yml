@@ -57,6 +57,34 @@ jobs:
       - name: Scan repository history for secrets
         run: gitleaks git --redact --exit-code 1 .
 
+  # Nuevo control DevSecOps: SAST (Static Application Security Testing)
+  # Analiza el código propio en busca de patrones inseguros (XSS, inyecciones,
+  # manejo inseguro de datos, etc.) y publica los resultados en la pestaña
+  # "Security > Code scanning" del repositorio.
+  sast-codeql:
+    name: SAST (CodeQL)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript
+          build-mode: none
+          queries: security-extended
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:javascript-typescript"
+
   build:
     name: Build
     runs-on: ubuntu-latest  # This specifies the OS for the job
