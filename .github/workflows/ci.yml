@@ -1,0 +1,115 @@
+  
+name: React CI/CD Pipeline with software testing
+
+# This triggers the workflow on pushes and pull requests to the main branch
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest  # This specifies the OS for the job
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checks out the code from your repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Sets up the Node.js environment
+        with:
+          node-version: '16'  # Specifies the version of Node.js
+
+      - name: Install dependencies
+        run: npm install  # Installs the required dependencies
+
+      - name: Build the app
+        run: npm run build  # Builds the React app for production
+
+  tests:
+    name: Run Tests
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Use Node.js 18.x to run Test
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: npm ci
+        
+      - name: Run Tests
+        run: npm run test
+
+      #- name: Build the app
+      #  run: npm run build  # Builds the React app for production
+  # Job to deploy the application after build
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: tests  # Ensures the deploy job runs only after the build job completes successfully
+
+    outputs:
+      vercel_url: ${{ steps.deploy-vercel.outputs.DEPLOY_URL }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 #  Re-checks out the code for deployment
+
+      - name: Deploy to Vercel
+        id: deploy-vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        # 💡 Usamos --confirm y limpiamos la salida para extraer SOLO la URL limpia
+        run: |
+          URL=$(npx vercel --prod --yes --token $VERCEL_TOKEN | tail -n 1)
+          echo "DEPLOY_URL=$URL" >> $GITHUB_OUTPUT
+
+  cypress-e2e:
+    name: Cypress E2E Tests
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+      - name: Checkout Cypress repo
+        uses: actions/checkout@v4
+        with:
+          repository: 'alunai-lang/agregar_repo_cypress'
+          token: ${{ secrets.MI_GITHUB_TOKEN_REPOS }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Force Install Cypress Module
+        run: npm install cypress --save-dev
+
+      - name: Debug URL
+        run: echo "La URL recibida de Vercel es ${{ needs.deploy.outputs.vercel_url }}"
+          
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v6
+        env:
+          CYPRESS_BASE_URL: ${{ needs.deploy.outputs.vercel_url }}
+          CYPRESS_SCREENSHOT_ON_RUN_FAILURE: false
+          CYPRESS_VIDEO: false
+          # 💡 Evita problemas de renderizado de fuentes/gráficas virtuales en Linux sin GUI
+          ELECTRON_DISABLE_GPU: 1
+          DISABLE_X1IR_WORKAROUNDS: true
+        with:
+          install: false
+          component: false
+          record: false
+          publish-summary: true
+          # 💡 Forzamos el uso de Chrome en lugar de Electron, ya que gestiona mejor la memoria en GitHub Actions
+          browser: chrome 
