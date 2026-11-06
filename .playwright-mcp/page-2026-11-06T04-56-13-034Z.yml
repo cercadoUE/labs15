@@ -1,0 +1,37 @@
+- generic [ref=f3e3]:
+  - banner [ref=f3e4]:
+    - img "logo"
+    - paragraph [ref=f3e5]:
+      - text: DevOps Testing
+      - code [ref=f3e6]: CI-CD
+      - text: ESAN Project
+    - paragraph [ref=f3e7]: Prueba de SOftware
+  - heading "Registro de Productos" [level=1] [ref=f3e8]
+  - generic [ref=f3e9]:
+    - group [ref=f3e10]:
+      - generic [ref=f3e11]:
+        - paragraph [ref=f3e12]: Código (mínimo 5 caracteres)
+        - textbox "Código (mínimo 5 caracteres)" [ref=f3e13]:
+          - /placeholder: Ingrese código
+      - generic [ref=f3e14]:
+        - paragraph [ref=f3e15]: Nombre de producto
+        - textbox "Nombre de producto" [ref=f3e16]:
+          - /placeholder: Ingrese nombre
+      - generic [ref=f3e17]:
+        - paragraph [ref=f3e18]: Descripción
+        - textbox "Descripción" [ref=f3e19]:
+          - /placeholder: Ingrese descripción
+      - generic [ref=f3e20]:
+        - paragraph [ref=f3e21]: Stock
+        - spinbutton "Stock" [ref=f3e22]
+      - paragraph [ref=f3e23]: Categoría
+      - combobox [ref=f3e24]:
+        - option "Select" [selected]
+        - option "Ropa"
+        - option "Laptop"
+        - option "Smartphone"
+        - option "Smart TV"
+        - option "Computadora"
+        - option "Tablet"
+    - generic [ref=f3e25]: Por favor ingrese todo los datos solicitados.
+    - button "Enviar" [disabled] [ref=f3e26]

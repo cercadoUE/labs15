@@ -1,0 +1,349 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e9]:
+      - heading "Navigation Menu" [level=2] [ref=e10]
+      - generic [ref=e11]:
+        - link "Homepage" [ref=e14] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e17]:
+          - navigation "Global" [ref=e18]:
+            - list [ref=e19]:
+              - listitem [ref=e20]:
+                - button "Products" [ref=e22] [cursor=pointer]
+              - listitem [ref=e25]:
+                - button "Developers" [ref=e27] [cursor=pointer]
+              - listitem [ref=e30]:
+                - button "Businesses" [ref=e32] [cursor=pointer]
+              - listitem [ref=e35]:
+                - button "Resources" [ref=e37] [cursor=pointer]
+              - listitem [ref=e40]:
+                - link "Pricing" [ref=e41] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+          - generic [ref=e42]:
+            - button "Search or jump to, type / to search" [ref=e44] [cursor=pointer]
+            - generic [ref=e50]:
+              - link "Sign in" [ref=e52] [cursor=pointer]:
+                - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FcercadoUE%2Flabs15%2Factions%2Fruns%2F42164803112
+              - link "Sign up" [ref=e55] [cursor=pointer]:
+                - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Fworkflow_runs%2Fshow&source=header-repo&source_repo=cercadoUE%2Flabs15
+              - button "Appearance settings" [ref=e58] [cursor=pointer]
+  - main [ref=e65]:
+    - generic [ref=e66]:
+      - generic "Global navigation menu" [ref=e69]:
+        - navigation "Breadcrumbs" [ref=e72]:
+          - list [ref=e73]:
+            - listitem [ref=e74]:
+              - link "cercadoUE" [ref=e75] [cursor=pointer]:
+                - /url: /cercadoUE
+            - listitem [ref=e77]:
+              - link "labs15" [ref=e78] [cursor=pointer]:
+                - /url: /cercadoUE/labs15
+        - heading "Repository navigation" [level=2] [ref=e81]
+        - navigation "Repository" [ref=e82]:
+          - list [ref=e83]:
+            - listitem [ref=e84]:
+              - link "Code" [ref=e85] [cursor=pointer]:
+                - /url: /cercadoUE/labs15
+            - listitem [ref=e90]:
+              - link "Issues" [ref=e91] [cursor=pointer]:
+                - /url: /cercadoUE/labs15/issues
+            - listitem [ref=e97]:
+              - link "Pull requests" [ref=e98] [cursor=pointer]:
+                - /url: /cercadoUE/labs15/pulls
+            - listitem [ref=e103]:
+              - link "Actions" [ref=e104] [cursor=pointer]:
+                - /url: /cercadoUE/labs15/actions
+            - listitem [ref=e109]:
+              - link "Projects" [ref=e110] [cursor=pointer]:
+                - /url: /cercadoUE/labs15/projects
+            - listitem [ref=e115]:
+              - link "Security and quality" [ref=e116] [cursor=pointer]:
+                - /url: /cercadoUE/labs15/security
+            - listitem [ref=e121]:
+              - link "Insights" [ref=e122] [cursor=pointer]:
+                - /url: /cercadoUE/labs15/pulse
+      - generic [ref=e131]:
+        - generic [ref=e134]:
+          - link "React CI/CD Pipeline with software testing and DevSecOps" [ref=e137] [cursor=pointer]:
+            - /url: /cercadoUE/labs15/actions/workflows/ci.yml
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - img "completed successfully:" [ref=e146]
+              - 'heading "feat(devsecops): add SAST (CodeQL) as a new security control #9" [level=1] [ref=e148]'
+            - link "Sign in to view logs" [ref=e152] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FcercadoUE%2Flabs15%2Factions%2Fruns%2F42164803112
+        - generic [ref=e156]:
+          - region "Workflow run summary" [ref=e157]:
+            - generic [ref=e158]:
+              - generic [ref=e159]:
+                - generic [ref=e160]: Triggered via push 5 minutes ago
+                - generic [ref=e161]:
+                  - link [ref=e162] [cursor=pointer]:
+                    - /url: /cercadoUE
+                    - img "@cercadoUE" [ref=e163]
+                    - text: cercadoUE
+                  - generic [ref=e164]:
+                    - generic [ref=e165]: pushed
+                    - link "ed17697" [ref=e166] [cursor=pointer]:
+                      - /url: /cercadoUE/labs15/commit/ed17697502844c96a3bbb74139b2eee0de68b3e7
+                  - link "main" [ref=e169] [cursor=pointer]:
+                    - /url: /cercadoUE/labs15/tree/refs/heads/main
+              - generic [ref=e170]:
+                - generic [ref=e171]: Status
+                - text: Success
+              - generic [ref=e172]:
+                - generic [ref=e173]: Total duration
+                - link "2m 24s" [ref=e174] [cursor=pointer]:
+                  - /url: /cercadoUE/labs15/actions/runs/42164803112/usage
+              - generic [ref=e175]:
+                - generic [ref=e176]: Artifacts
+                - text: –
+          - region "Workflow run graph" [ref=e177]:
+            - generic [ref=e179]:
+              - generic [ref=e181]:
+                - heading [level=2] [ref=e182]:
+                  - link "ci.yml" [ref=e183] [cursor=pointer]:
+                    - /url: /cercadoUE/labs15/actions/runs/42164803112/workflow
+                - generic [ref=e184]: "on: push"
+              - generic [ref=e186]:
+                - generic [ref=e187]:
+                  - generic [ref=e188]:
+                    - generic [ref=e189]:
+                      - 'link "completed successfully: Audit npm dependencies 10s" [ref=e191] [cursor=pointer]':
+                        - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660149
+                        - generic [ref=e193]:
+                          - img "completed successfully:" [ref=e195]
+                          - generic [ref=e197]: Audit npm dependencies
+                          - generic [ref=e199]: 10s
+                      - 'link "completed successfully: Scan for secrets 6s" [ref=e201] [cursor=pointer]':
+                        - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660388
+                        - generic [ref=e203]:
+                          - img "completed successfully:" [ref=e205]
+                          - generic [ref=e207]: Scan for secrets
+                          - generic [ref=e209]: 6s
+                    - 'link "completed successfully: Build 27s" [ref=e213] [cursor=pointer]':
+                      - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660440
+                      - generic [ref=e215]:
+                        - img "completed successfully:" [ref=e217]
+                        - generic [ref=e219]: Build
+                        - generic [ref=e221]: 27s
+                    - 'link "completed successfully: SAST (CodeQL) 51s" [ref=e225] [cursor=pointer]':
+                      - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660431
+                      - generic [ref=e227]:
+                        - img "completed successfully:" [ref=e229]
+                        - generic [ref=e231]: SAST (CodeQL)
+                        - generic [ref=e233]: 51s
+                  - 'link "completed successfully: Run Tests 18s" [ref=e237] [cursor=pointer]':
+                    - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718817543
+                    - generic [ref=e239]:
+                      - img "completed successfully:" [ref=e241]
+                      - generic [ref=e243]: Run Tests
+                      - generic [ref=e245]: 18s
+                  - 'link "completed successfully: Deploy 35s" [ref=e251] [cursor=pointer]':
+                    - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718923413
+                    - generic [ref=e253]:
+                      - img "completed successfully:" [ref=e255]
+                      - generic [ref=e257]: Deploy
+                      - generic [ref=e259]: 35s
+                  - 'link "completed successfully: Cypress E2E Tests 54s" [ref=e265] [cursor=pointer]':
+                    - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127719112925
+                    - generic [ref=e267]:
+                      - img "completed successfully:" [ref=e269]
+                      - generic [ref=e271]: Cypress E2E Tests
+                      - generic [ref=e273]: 54s
+                - generic [aria-hidden] [ref=e275]:
+                  - paragraph [ref=e276]: Oh hello! Nice to see you.
+                  - paragraph [ref=e277]:
+                    - text: Made with ❤️ by
+                    - link [ref=e278] [cursor=pointer]:
+                      - /url: https://actions.github.io/humans.txt
+                      - text: humans.txt
+              - generic [ref=e279]:
+                - button "Fit to window" [disabled] [ref=e280]
+                - generic [ref=e281]:
+                  - button "Zoom out" [disabled] [ref=e283]
+                  - button "Zoom in" [ref=e285] [cursor=pointer]
+          - region "Annotations" [ref=e286]:
+            - generic [ref=e287]:
+              - generic [ref=e289]:
+                - heading "Annotations" [level=2] [ref=e290]
+                - generic [ref=e291]: 7 warnings and 7 notices
+              - table [ref=e292]:
+                - rowgroup [ref=e293]:
+                  - row [ref=e294]:
+                    - cell [ref=e295]:
+                      - generic [ref=e300]:
+                        - link [ref=e301] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660388#step:9:2
+                          - strong [ref=e302]: Scan for secrets
+                        - generic [ref=e303]:
+                          - generic [ref=e305]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e306] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e307] [cursor=pointer]
+                  - row [ref=e308]:
+                    - cell [ref=e309]:
+                      - generic [ref=e314]:
+                        - link [ref=e315] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660149#step:9:2
+                          - strong [ref=e316]: Audit npm dependencies
+                        - generic [ref=e317]:
+                          - generic [ref=e319]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e320] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e321] [cursor=pointer]
+                  - row [ref=e322]:
+                    - cell [ref=e323]:
+                      - generic [ref=e328]:
+                        - link [ref=e329] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660440#step:11:2
+                          - strong [ref=e330]: Build
+                        - generic [ref=e331]:
+                          - generic [ref=e333]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e334] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e335] [cursor=pointer]
+                  - row [ref=e336]:
+                    - cell [ref=e337]:
+                      - generic [ref=e342]:
+                        - link [ref=e343] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718817543#step:11:2
+                          - strong [ref=e344]: Run Tests
+                        - generic [ref=e345]:
+                          - generic [ref=e347]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e348] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e349] [cursor=pointer]
+                  - row [ref=e350]:
+                    - cell [ref=e351]:
+                      - generic [ref=e356]:
+                        - link [ref=e357] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660431#step:9:2
+                          - strong [ref=e358]: SAST (CodeQL)
+                        - generic [ref=e359]:
+                          - generic [ref=e361]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e362] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e363] [cursor=pointer]
+                  - row [ref=e364]:
+                    - cell [ref=e365]:
+                      - generic [ref=e370]:
+                        - link [ref=e371] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718923413#step:7:6
+                          - strong [ref=e372]: Deploy
+                        - generic [ref=e373]:
+                          - generic [ref=e375]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e376] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e377] [cursor=pointer]
+                  - row [ref=e378]:
+                    - cell [ref=e379]:
+                      - generic [ref=e384]:
+                        - link [ref=e385] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127719112925#step:13:2
+                          - strong [ref=e386]: Cypress E2E Tests
+                        - generic [ref=e387]:
+                          - generic [ref=e389]:
+                            - text: "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, cypress-io/github-action@v6. For more information see:"
+                            - link "https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/" [ref=e390] [cursor=pointer]:
+                              - /url: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+                          - button "Show more" [ref=e391] [cursor=pointer]
+                  - row [ref=e392]:
+                    - cell [ref=e393]:
+                      - generic [ref=e398]:
+                        - link [ref=e399] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660388
+                          - strong [ref=e400]: Scan for secrets
+                        - generic [ref=e401]:
+                          - generic [ref=e403]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e404] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e405] [cursor=pointer]
+                  - row [ref=e406]:
+                    - cell [ref=e407]:
+                      - generic [ref=e412]:
+                        - link [ref=e413] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660149
+                          - strong [ref=e414]: Audit npm dependencies
+                        - generic [ref=e415]:
+                          - generic [ref=e417]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e418] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e419] [cursor=pointer]
+                  - row [ref=e420]:
+                    - cell [ref=e421]:
+                      - generic [ref=e426]:
+                        - link [ref=e427] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660440
+                          - strong [ref=e428]: Build
+                        - generic [ref=e429]:
+                          - generic [ref=e431]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e432] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e433] [cursor=pointer]
+                  - row [ref=e434]:
+                    - cell [ref=e435]:
+                      - generic [ref=e440]:
+                        - link [ref=e441] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718817543
+                          - strong [ref=e442]: Run Tests
+                        - generic [ref=e443]:
+                          - generic [ref=e445]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e446] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e447] [cursor=pointer]
+                  - row [ref=e448]:
+                    - cell [ref=e449]:
+                      - generic [ref=e454]:
+                        - link [ref=e455] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718660431
+                          - strong [ref=e456]: SAST (CodeQL)
+                        - generic [ref=e457]:
+                          - generic [ref=e459]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e460] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e461] [cursor=pointer]
+                  - row [ref=e462]:
+                    - cell [ref=e463]:
+                      - generic [ref=e468]:
+                        - link [ref=e469] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127718923413
+                          - strong [ref=e470]: Deploy
+                        - generic [ref=e471]:
+                          - generic [ref=e473]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e474] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e475] [cursor=pointer]
+                  - row [ref=e476]:
+                    - cell [ref=e477]:
+                      - generic [ref=e482]:
+                        - link [ref=e483] [cursor=pointer]:
+                          - /url: /cercadoUE/labs15/actions/runs/42164803112/job/127719112925
+                          - strong [ref=e484]: Cypress E2E Tests
+                        - generic [ref=e485]:
+                          - generic [ref=e487]:
+                            - text: "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see"
+                            - link "https://github.com/actions/runner-images/issues/14748" [ref=e488] [cursor=pointer]:
+                              - /url: https://github.com/actions/runner-images/issues/14748
+                            - text: "\""
+                          - button "Show more" [ref=e489] [cursor=pointer]
