@@ -1,4 +1,4 @@
-name: React CI/CD Pipeline with software testing
+name: React CI/CD Pipeline with software testing and DevSecOps
 
 # This triggers the workflow on pushes and pull requests to the main branch
 on:
@@ -9,10 +9,13 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest  # This specifies the OS for the job
+  dependency-audit:
+    name: Audit npm dependencies
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -21,7 +24,51 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 20
+          cache: npm
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+
+  secret-scan:
+    name: Scan for secrets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Gitleaks
+        env:
+          GITLEAKS_VERSION: 8.30.1
+        run: |
+          set -euo pipefail
+          archive="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          release_url="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          curl --fail --silent --show-error --location "$release_url/$archive" --output "$RUNNER_TEMP/$archive"
+          curl --fail --silent --show-error --location "$release_url/gitleaks_${GITLEAKS_VERSION}_checksums.txt" --output "$RUNNER_TEMP/checksums.txt"
+          cd "$RUNNER_TEMP"
+          grep -F "  $archive" checksums.txt | sha256sum --check
+          tar -xzf "$archive" gitleaks
+          sudo install -m 0755 gitleaks /usr/local/bin/gitleaks
+
+      - name: Scan repository history for secrets
+        run: gitleaks git --redact --exit-code 1 .
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest  # This specifies the OS for the job
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Checks out the code from your repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4  # Sets up the Node.js environment
+        with:
+          node-version: '18'  # Specifies the version of Node.js
 
       - name: Install dependencies
         run: npm install  # Installs the required dependencies
@@ -50,13 +97,12 @@ jobs:
       - name: Run Tests
         run: npm run test
 
-      #- name: Build the app
-      #  run: npm run build  # Builds the React app for production
   # Job to deploy the application after build
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: tests  # Ensures the deploy job runs only after the build job completes successfully
+    needs: [tests, dependency-audit, secret-scan]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     outputs:
       vercel_url: ${{ steps.deploy-vercel.outputs.DEPLOY_URL }}
