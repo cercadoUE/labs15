@@ -16,8 +16,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-        "lint": "eslint src/**/*.js src/**/*.jsx",
-    "lint:fix": "npm run lint --fix"
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:fix": "npm run lint --fix",
+    "postinstall": "patch-package"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +37,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "postcss": "^8.5.32",
+    "serialize-javascript": "^7.1.4",
+    "svgo": "^2.8.4",
+    "webpack-dev-middleware": "^7.4.5",
+    "webpack-dev-server": "^5.2.5",
+    "jsonpath": "^1.1.2",
+    "underscore": "^1.13.8"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.1"
   }
 }
